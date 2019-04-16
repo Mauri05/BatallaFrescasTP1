@@ -10,13 +10,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        List<Vikingo> vikingos = new ArrayList<Vikingo>();
-        List<Espartano> espartanos = new ArrayList<Espartano>();
+        List<Vikingo> vikingos = new ArrayList<>();
+        List<Espartano> espartanos = new ArrayList<>();
 
         vikingos = Arrays.asList(
                 new Vikingo("Pepe",23,70,new OrinarVikingoImp(),new BeberVikingoImp(), (int)(Math.random()*100)+1),
                 new Vikingo("Jorge",30,89,new OrinarVikingoImp(),new BeberVikingoImp(), (int)(Math.random()*100)+1),
-                new Vikingo("Mauri",10,63,new OrinarVikingoImp(),new BeberVikingoImp(), (int)(Math.random()*100)+1)
+                new Vikingo("Mauri",19,63,new OrinarVikingoImp(),new BeberVikingoImp(), (int)(Math.random()*100)+1)
         );
 
         espartanos = Arrays.asList(
@@ -28,7 +28,7 @@ public class App
         System.out.println("Vikingos: " + vikingos);
         System.out.println("Espartanos: " + espartanos);
 
-        //DNI Par: Orderlos por edad (de manera ascendente)
+        //DNI Par: Ordenarlos por edad (de manera ascendente)
 
         vikingos.sort(Comparator.comparing(Vikingo::getEdad));
         espartanos.sort(Comparator.comparing(Espartano::getEdad));

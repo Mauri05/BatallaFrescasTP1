@@ -14,4 +14,19 @@ public class Espartano extends Humano{
   public int getEdad(){
     return super.getEdad();
   }
+
+  public int getToleranciaExtra() {
+    return toleranciaExtra;
+  }
+
+  public void setToleranciaExtra(int toleranciaExtra) {
+    this.toleranciaExtra = toleranciaExtra;
+  }
+
+  @Override
+  public String toString() {
+    return "Espartano{" + super.toString() +
+            "toleranciaExtra=" + toleranciaExtra +
+            '}';
+  }
 }

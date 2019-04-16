@@ -18,7 +18,54 @@ public class Humano{
     this.beber = beber;
   }
 
-  public int getEdad(){
-    return this.edad;
+  public String getNombre() {
+    return nombre;
+  }
+
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
+  }
+
+  public int getEdad() {
+    return edad;
+  }
+
+  public void setEdad(int edad) {
+    this.edad = edad;
+  }
+
+  public int getPeso() {
+    return peso;
+  }
+
+  public void setPeso(int peso) {
+    this.peso = peso;
+  }
+
+  public Orinar getOrinar() {
+    return orinar;
+  }
+
+  public void setOrinar(Orinar orinar) {
+    this.orinar = orinar;
+  }
+
+  public Beber getBeber() {
+    return beber;
+  }
+
+  public void setBeber(Beber beber) {
+    this.beber = beber;
+  }
+
+  @Override
+  public String toString() {
+    return "Humano{" +
+            "nombre='" + nombre + '\'' +
+            ", edad=" + edad +
+            ", peso=" + peso +
+            ", orinar=" + getOrinar().orinar() +
+            ", beber=" + getBeber().beber() +
+            '}';
   }
 }

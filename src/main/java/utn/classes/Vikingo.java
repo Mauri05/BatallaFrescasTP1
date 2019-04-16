@@ -14,4 +14,19 @@ public class Vikingo extends Humano {
   public int getEdad(){
     return super.getEdad();
   }
+
+  public int getBebedorProfesional() {
+    return bebedorProfesional;
+  }
+
+  public void setBebedorProfesional(int bebedorProfesional) {
+    this.bebedorProfesional = bebedorProfesional;
+  }
+
+  @Override
+  public String toString() {
+    return "Vikingo{" + super.toString() +
+            "bebedorProfesional=" + bebedorProfesional +
+            '}';
+  }
 }
