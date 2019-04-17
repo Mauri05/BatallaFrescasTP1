@@ -36,7 +36,15 @@ public class App
         System.out.println("Vikingos ordenados: " + vikingos);
         System.out.println("Espartanos ordenados: " + espartanos);
 
-        int numeroRand = (int)((Math.random()*vikingos.size())+1)-1;
-        System.out.println(numeroRand);
+        int numeroRandVikingos = (int)((Math.random()*vikingos.size())+1)-1;
+        System.out.println(numeroRandVikingos);
+
+        int numeroRandEspartanos = (int) ((Math.random()*espartanos.size())+1)-1;
+        System.out.println(numeroRandEspartanos);
+
+        Vikingo v = vikingos.get(numeroRandVikingos);
+        Espartano e = espartanos.get(numeroRandEspartanos);
+
+        System.out.println("Batalla: " + v + e);
     }
 }
