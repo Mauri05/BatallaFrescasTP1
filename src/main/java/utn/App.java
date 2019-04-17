@@ -10,6 +10,8 @@ public class App
 {
     public static void main( String[] args )
     {
+        Jefe boss = new Jefe("Duff man", 35, 70, new OrinarVikingoImp(), new BeberEspartanoImp(), (int)(Math.random()*100)+1, (int)(Math.random()*100)+1);
+
         List<Vikingo> vikingos = new ArrayList<>();
         List<Espartano> espartanos = new ArrayList<>();
 
@@ -45,6 +47,7 @@ public class App
         Vikingo v = vikingos.get(numeroRandVikingos);
         Espartano e = espartanos.get(numeroRandEspartanos);
 
-        System.out.println("Batalla: " + v + e);
+        Humano ganador = Batalla.batallaInicial(v,e);
+        Batalla.batallaBoss(boss, ganador);
     }
 }
