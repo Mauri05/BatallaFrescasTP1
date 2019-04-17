@@ -39,15 +39,16 @@ public class App
         System.out.println("Espartanos ordenados: " + espartanos);
 
         int numeroRandVikingos = (int)((Math.random()*vikingos.size())+1)-1;
-        System.out.println(numeroRandVikingos);
-
         int numeroRandEspartanos = (int) ((Math.random()*espartanos.size())+1)-1;
-        System.out.println(numeroRandEspartanos);
 
         Vikingo v = vikingos.get(numeroRandVikingos);
         Espartano e = espartanos.get(numeroRandEspartanos);
 
+        System.out.println("\n----- Batalla Inicial -----");
+        System.out.println("\nVikingo "+v.getNombre()+" vs Espartano "+e.getNombre()+"\n");
         Humano ganador = Batalla.batallaInicial(v,e);
+        System.out.println("\n----- Batalla Boss -----");
+        System.out.println("\n"+ganador.getNombre()+" vs "+boss.getNombre()+"\n");
         Batalla.batallaBoss(boss, ganador);
     }
 }

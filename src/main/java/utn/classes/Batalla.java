@@ -3,6 +3,7 @@ package utn.classes;
 public class Batalla{
 
     public static Humano batallaInicial(Vikingo vikingo, Espartano espartano){
+        Conectar connection = new Conectar();
         Humano ganador = null;
         int contador = 0;
         while(contador <= vikingo.getBebedorProfesional() && contador <= espartano.getToleranciaExtra()){
@@ -13,14 +14,16 @@ public class Batalla{
         if(contador > vikingo.getBebedorProfesional()){
             System.out.println(vikingo.getOrinar().orinar());
             ganador = espartano;
+            connection.setGanadores("insert into ganadores (nombre, cantidad_bebida) values ('"+espartano.getNombre()+"','"+espartano.getToleranciaExtra()+"')");
         }
         else{
             System.out.println(espartano.getOrinar().orinar());
             ganador = vikingo;
+            connection.setGanadores("insert into ganadores (nombre, cantidad_bebida) values ('"+vikingo.getNombre()+"','"+vikingo.getBebedorProfesional()+"')");
         }
-        System.out.println("Resultados Finales: /n");
+        System.out.println("\nResultados Finales: \n");
         System.out.println("Vikingo "+vikingo.getNombre()+" bebio "+vikingo.getBebedorProfesional()+" botellas");
-        System.out.println("Espartano "+espartano.getNombre()+" bebio "+espartano.getToleranciaExtra()+" botellas");
+        System.out.println("Espartano "+espartano.getNombre()+" bebio "+espartano.getToleranciaExtra()+" botellas\n");
         return ganador;
     }
 
@@ -48,14 +51,19 @@ public class Batalla{
         else{
             System.out.println(ganador.getOrinar().orinar());
         }
-        System.out.println("Resultados Finales: /n");
+        System.out.println("\nResultados Finales: \n");
         System.out.println("Boss "+boss.getNombre()+" bebio "+atributosJefe);
-        System.out.println("Retador "+ganador.getNombre()+" bebio "+atributosGanador);
+        System.out.println("Retador "+ganador.getNombre()+" bebio "+atributosGanador+"\n");
         if(atributosJefe>=atributosGanador){
             System.out.println("El jefe volvio a ganar");
         }
         else{
-            System.out.println("El retador "+ganador.getNombre()+" triunfo heroicamente");
+            System.out.println("¡El retador "+ganador.getNombre()+" triunfo heroicamente!");
         }
+    }
+
+    public static void historialGanadores(){
+        Conectar connection = new Conectar();
+        connection.getGanadores();
     }
 }
